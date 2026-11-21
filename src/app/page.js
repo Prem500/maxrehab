@@ -390,285 +390,285 @@ export default function Page() {
 
         {/* header */}
         <header className="bg-white border-b border-slate-100">
-          <div className="max-w-6xl mx-auto px-5 md:px-10 py-3 md:py-4 flex items-center justify-between relative">
-            {/* Left side on desktop: Dept / Clinic info */}
-            <div className="hidden lg:flex items-center gap-3 w-1/4">
-              <span className="text-xs text-slate-500 leading-tight">
-                <span className="font-bold text-[#241f6b] block text-[13px]">Neuro Rehabilitation</span>
-                Dehri on Sone, Bihar
-              </span>
-            </div>
-
-            {/* Centered Large Logo */}
-            <div className="flex-1 flex justify-center items-center py-1">
-              <a href="#top" className="flex items-center justify-center group" aria-label="MaxRehab Advanced Neurorehabilitation Center Home">
-                <img
-                  src={IMG.logo}
-                  alt="MaxRehab Advanced Neurorehabilitation Center"
-                  className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                />
-              </a>
-            </div>
-
-            {/* Right side: Phone & Appointment Button */}
-            <div className="flex items-center justify-end gap-3 w-auto lg:w-1/4">
-              <a href={`tel:${C.phone.replace(/\s/g, "")}`} className="hidden md:flex items-center gap-2 text-sm font-bold text-[#241f6b] bg-slate-50 px-3.5 py-2 rounded-full border border-slate-200/70 hover:border-[#2bb5a0] transition">
-                <Ico n="ph" c="w-4 h-4 t-teal" />
-                <span>{C.phone}</span>
-              </a>
-              <a href="#contact" className="hidden sm:inline-flex btn btn-p !py-2 !px-4 !text-xs shadow-md">Book Appointment</a>
-              <button aria-label="Menu" onClick={() => setMenu(!menu)} className="md:hidden p-2 text-[#241f6b]">
-                <Ico n={menu ? "x" : "menu"} />
-              </button>
-            </div>
-          </div>
-
-          {/* Centered Navigation Menu */}
-          <nav className={`${menu ? "grid" : "hidden"} md:flex max-w-6xl mx-auto px-5 md:px-10 md:justify-center md:gap-8 pb-3 md:pb-2.5 pt-1 text-sm font-semibold text-slate-600 border-t border-slate-100`}>
-            {NAV.map(([l, h]) => (
-              <a key={h} href={`#${h}`} onClick={() => setMenu(false)} className="py-2 md:py-0 hover:text-[#2bb5a0] transition text-center">
-                {l}
-              </a>
-            ))}
-          </nav>
-        </header>
-
-        {/* title banner (3D nerve-body on the right) */}
-        <section className="dk relative bg-deep overflow-hidden min-h-[420px] md:min-h-[540px] flex items-center" style={{ background: "linear-gradient(100deg,#241f6b,#17134a 70%)" }}>
-          <div ref={hero} className="absolute inset-0" aria-hidden />
-          <div className="absolute bottom-0 left-0 w-28 h-14 tri opacity-90" />
-          <div className="relative max-w-6xl mx-auto px-5 md:px-10 w-full py-14 pointer-events-none">
-            <p className="rv text-xs font-bold tracking-[.25em] uppercase t-mint mb-3">MaxRehab · Advanced Neurorehabilitation Center</p>
-            <h1 className="rv text-3xl sm:text-4xl md:text-5xl font-light tracking-wide uppercase leading-tight max-w-xl" style={{ "--d": ".1s" }}>Advanced<br />Neurorehabilitation<br /><span className="font-bold">Center</span></h1>
-          </div>
-        </section>
-
-        {/* breadcrumb + intro */}
-        <section className="px-5 md:px-10 pt-6 pb-16">
-          <div className="max-w-6xl mx-auto">
-            <p className="text-xs text-slate-500"><a href="#top" className="underline">Home</a> › <a href="#about" className="underline">MaxRehab</a> › Advanced Neurorehabilitation</p>
-            <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center mt-8">
-              <div className="rv">
-                <H2 a="Advanced Neuro Rehabilitation" b="& Physiotherapy" c="!text-4xl" />
-                <p className="mt-6 text-[15px] leading-relaxed text-slate-600">MaxRehab Advanced Neurorehabilitation Center is a specialized centre dedicated entirely to individuals recovering from stroke, brain injury, spinal cord trauma, and complex neurological disorders. Every rehabilitation plan is spearheaded by experienced neuro-physiotherapists and structured around concrete, achievable functional milestones.</p>
-                <p className="mt-4 text-[15px] leading-relaxed text-slate-600">We integrate evidence-based neurological physiotherapy, occupational re-training, speech therapy, and caregiver education to rebuild independence, restore motor pathways, and enhance quality of life.</p>
-                <div className="flex flex-wrap items-center gap-5 mt-8">
-                  <Btn href={ask("I'd like to request a consultation.")}>Request Consultation <Ico n="arr" c="w-4 h-4" /></Btn>
-                  <a href={VIDEO || "#about"} target={VIDEO ? "_blank" : undefined} rel="noreferrer" className="flex items-center gap-3 text-sm font-semibold text-slate-600"><span className="w-10 h-10 rounded-full border-2 border-[#2bb5a0] t-teal grid place-items-center"><Ico n="play" c="w-3.5 h-3.5" /></span>Watch our video</a>
+              <div className="max-w-6xl mx-auto px-5 md:px-10 py-3 md:py-4 flex items-center justify-between relative">
+                {/* Left side on desktop: Dept / Clinic info */}
+                <div className="hidden lg:flex items-center gap-3 w-1/4">
+                  <span className="text-xs text-slate-500 leading-tight">
+                    <span className="font-bold text-[#241f6b] block text-[13px]">Neuro Rehabilitation</span>
+                    Dehri on Sone, Bihar
+                  </span>
                 </div>
-                <div className="flex gap-3 mt-8">
-                  <a aria-label="Call" href={`tel:${C.phone.replace(/\s/g, "")}`} className="w-10 h-10 rounded-full border border-pink-300 text-pink-500 grid place-items-center"><Ico n="ph" c="w-4 h-4" /></a>
-                  <a aria-label="WhatsApp" href={ask("I want to know more.")} target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-pink-300 text-pink-500 grid place-items-center"><Ico n="arr" c="w-4 h-4" /></a>
+
+                {/* Centered Large Logo */}
+                <div className="flex-1 flex justify-center items-center py-1">
+                  <a href="#top" className="flex items-center justify-center group" aria-label="MaxRehab Advanced Neurorehabilitation Center Home">
+                    <img
+                      src={IMG.logo}
+                      alt="MaxRehab Advanced Neurorehabilitation Center"
+                      className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </a>
+                </div>
+
+                {/* Right side: Phone & Appointment Button */}
+                <div className="flex items-center justify-end gap-3 w-auto lg:w-1/4">
+                  <a href={`tel:${C.phone.replace(/\s/g, "")}`} className="hidden md:flex items-center gap-2 text-sm font-bold text-[#241f6b] bg-slate-50 px-3.5 py-2 rounded-full border border-slate-200/70 hover:border-[#2bb5a0] transition">
+                    <Ico n="ph" c="w-4 h-4 t-teal" />
+                    <span>{C.phone}</span>
+                  </a>
+                  <a href="#contact" className="hidden sm:inline-flex btn btn-p !py-2 !px-4 !text-xs shadow-md">Book Appointment</a>
+                  <button aria-label="Menu" onClick={() => setMenu(!menu)} className="md:hidden p-2 text-[#241f6b]">
+                    <Ico n={menu ? "x" : "menu"} />
+                  </button>
                 </div>
               </div>
-              <div className="rv frame" style={{ "--d": ".15s" }}><Img k="hero" label="Intro photo · 4:3" className="w-full aspect-[4/3]" /></div>
-            </div>
-          </div>
-        </section>
 
-        {/* sticky tabs */}
-        <div className="sticky top-0 z-40 px-3 py-3 pointer-events-none">
-          <div className="noscroll pointer-events-auto max-w-fit mx-auto bg-white/95 backdrop-blur rounded-full shadow-xl p-1.5 flex overflow-x-auto max-w-full border border-slate-100">
-            {TABS.map(([l, h]) => <a key={h} href={`#${h}`} className={`tab ${act === h ? "on" : ""}`}>{l}</a>)}
-          </div>
-        </div>
+                {/* Centered Navigation Menu */}
+                <nav className={`${menu ? "grid" : "hidden"} md:flex max-w-6xl mx-auto px-5 md:px-10 md:justify-center md:gap-8 pb-3 md:pb-2.5 pt-1 text-sm font-semibold text-slate-600 border-t border-slate-100`}>
+                  {NAV.map(([l, h]) => (
+                    <a key={h} href={`#${h}`} onClick={() => setMenu(false)} className="py-2 md:py-0 hover:text-[#2bb5a0] transition text-center">
+                      {l}
+                    </a>
+                  ))}
+                </nav>
+              </header>
 
-        {/* ABOUT */}
-        <section id="about" className="bg-sky relative overflow-hidden px-5 md:px-10 py-20 md:py-24">
-          <Ring c="-right-40 bottom-0 hidden md:block" />
-          <div className="max-w-6xl mx-auto relative">
-            <div className="rv"><H2 a="Personalized Neurological" b="Rehabilitation" /></div>
-            <div className="rv mt-8 grid gap-5 max-w-4xl text-[15px] leading-relaxed text-slate-600">
-              <p>A neurological injury or illness can change how a person moves, communicates and manages daily life. Rehabilitation addresses these changes through a programme tailored to the individual's condition, abilities and priorities.</p>
-              <p>The rehabilitation team develops goals together with patients and their families, combining therapies according to each person's needs. Care may include physical rehabilitation, pain management, emotional support and help preparing for a return to home or work. After discharge, we continue with home programmes and follow-up.</p>
-              <p>A case manager helps coordinate communication between the patient, family and professionals involved in treatment.</p>
-              <p className="italic text-slate-500">For patients travelling from other districts or states, medical records can be reviewed by our team before arrival to assess the condition and the suitability of the available programmes. The rehabilitation plan is then set after an individual assessment.</p>
-            </div>
-          </div>
-        </section>
-
-        {/* CONDITIONS */}
-        <section id="conditions" className="px-5 md:px-10 py-20 md:py-24">
-          <div className="max-w-6xl mx-auto">
-            <div className="rv"><H2 a="Conditions" b="We Treat" /><p className="mt-4 text-[15px] text-slate-600">The centre provides rehabilitation for people with a wide range of neurological injuries and conditions, including:</p></div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-              {CONDS.map(([t, l], i) => (
-                <div key={t} className="rv card p-7" style={{ "--d": `${(i % 3) * .1}s` }}>
-                  <h3 className="font-bold text-[15px]">{t}</h3>
-                  <ul className="mt-3 grid gap-1.5 text-sm text-slate-500">{l.map((x) => <li key={x}>{x}</li>)}</ul>
+              {/* title banner (3D nerve-body on the right) */}
+              <section className="dk relative bg-deep overflow-hidden min-h-[420px] md:min-h-[540px] flex items-center" style={{ background: "linear-gradient(100deg,#241f6b,#17134a 70%)" }}>
+                <div ref={hero} className="absolute inset-0" aria-hidden />
+                <div className="absolute bottom-0 left-0 w-28 h-14 tri opacity-90" />
+                <div className="relative max-w-6xl mx-auto px-5 md:px-10 w-full py-14 pointer-events-none">
+                  <p className="rv text-xs font-bold tracking-[.25em] uppercase t-mint mb-3">MaxRehab · Advanced Neurorehabilitation Center</p>
+                  <h1 className="rv text-3xl sm:text-4xl md:text-5xl font-light tracking-wide uppercase leading-tight max-w-xl" style={{ "--d": ".1s" }}>Advanced<br />Neurorehabilitation<br /><span className="font-bold">Center</span></h1>
                 </div>
-              ))}
-            </div>
-            <p className="rv mt-10 text-[15px] text-slate-600 max-w-4xl">The rehabilitation plan depends on how the condition affects the individual's function and daily life. Patients may need support after a recent injury or illness, or help managing the ongoing effects of a neurological condition.</p>
-          </div>
-        </section>
+              </section>
 
-        {/* SPINAL CORD INJURY */}
-        <section id="sci" className="bg-sky relative overflow-hidden px-5 md:px-10 py-20 md:py-24">
-          <div className="dots absolute right-0 top-0 w-1/2 h-72 opacity-70 hidden md:block" />
-          <div className="max-w-6xl mx-auto relative">
-            <div className="rv"><H2 a="Spinal Cord" b="Injury" /><h3 className="font-bold text-2xl mt-10">Spinal Cord Injury Rehabilitation</h3></div>
-            <div className="rv mt-5 grid gap-4 max-w-4xl text-[15px] leading-relaxed text-slate-600">
-              <p>Our spinal cord injury programme is a focused service within MaxRehab Advanced Neurorehabilitation Center, delivered by a multidisciplinary team. It supports people with injuries to the spinal cord from accident, disease or surgery.</p>
-              <p>Treatment is shaped around the patient's remaining abilities and goals, with an emphasis on improving function and supporting daily activity.</p>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-6 mt-10 max-w-4xl">
-              {SCI.map(([t, d], i) => (
-                <div key={t} className="rv" style={{ "--d": `${(i % 2) * .1}s` }}>
-                  <h3 className="font-extrabold uppercase text-[15px] tracking-wide">{t}</h3>
-                  <p className="text-[15px] text-slate-600 mt-2 leading-relaxed">{d}</p>
+              {/* breadcrumb + intro */}
+              <section className="px-5 md:px-10 pt-6 pb-16">
+                <div className="max-w-6xl mx-auto">
+                  <p className="text-xs text-slate-500"><a href="#top" className="underline">Home</a> › <a href="#about" className="underline">MaxRehab</a> › Advanced Neurorehabilitation</p>
+                  <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center mt-8">
+                    <div className="rv">
+                      <H2 a="Advanced Neuro Rehabilitation" b="& Physiotherapy" c="!text-4xl" />
+                      <p className="mt-6 text-[15px] leading-relaxed text-slate-600">MaxRehab Advanced Neurorehabilitation Center is a specialized centre dedicated entirely to individuals recovering from stroke, brain injury, spinal cord trauma, and complex neurological disorders. Every rehabilitation plan is spearheaded by experienced neuro-physiotherapists and structured around concrete, achievable functional milestones.</p>
+                      <p className="mt-4 text-[15px] leading-relaxed text-slate-600">We integrate evidence-based neurological physiotherapy, occupational re-training, speech therapy, and caregiver education to rebuild independence, restore motor pathways, and enhance quality of life.</p>
+                      <div className="flex flex-wrap items-center gap-5 mt-8">
+                        <Btn href={ask("I'd like to request a consultation.")}>Request Consultation <Ico n="arr" c="w-4 h-4" /></Btn>
+                        <a href={VIDEO || "#about"} target={VIDEO ? "_blank" : undefined} rel="noreferrer" className="flex items-center gap-3 text-sm font-semibold text-slate-600"><span className="w-10 h-10 rounded-full border-2 border-[#2bb5a0] t-teal grid place-items-center"><Ico n="play" c="w-3.5 h-3.5" /></span>Watch our video</a>
+                      </div>
+                      <div className="flex gap-3 mt-8">
+                        <a aria-label="Call" href={`tel:${C.phone.replace(/\s/g, "")}`} className="w-10 h-10 rounded-full border border-pink-300 text-pink-500 grid place-items-center"><Ico n="ph" c="w-4 h-4" /></a>
+                        <a aria-label="WhatsApp" href={ask("I want to know more.")} target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-pink-300 text-pink-500 grid place-items-center"><Ico n="arr" c="w-4 h-4" /></a>
+                      </div>
+                    </div>
+                    <div className="rv frame" style={{ "--d": ".15s" }}><Img k="hero" label="Intro photo · 4:3" className="w-full aspect-[4/3]" /></div>
+                  </div>
                 </div>
-              ))}
-            </div>
-            <p className="rv mt-8 text-sm text-slate-500 max-w-4xl">Eligibility for any technique is decided after an individual clinical assessment; outcomes vary by patient.</p>
-          </div>
-        </section>
+              </section>
 
-        {/* THERAPIES & SUPPORT */}
-        <section id="therapies" className="relative overflow-hidden px-5 md:px-10 py-20 md:py-24">
-          <Ring c="-right-44 top-1/3 hidden lg:block" />
-          <div className="max-w-6xl mx-auto relative">
-            <div className="rv"><H2 a="Rehabilitation Therapies" b="and Support" /><p className="mt-4 text-[15px] text-slate-600 max-w-3xl">Patients receive a combination of therapies selected for their needs. These services address movement, daily activities, communication, cognitive difficulties and emotional adjustment.</p></div>
-            <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 mt-12 items-start">
-              <div className="grid gap-9">
-                {THER.map(([t, d]) => <div key={t} className="rv"><h3 className="font-bold text-2xl">{t}</h3><p className="text-[15px] text-slate-600 mt-2 leading-relaxed">{d}</p></div>)}
-              </div>
-              <div className="rv frame lg:sticky lg:top-24"><Img k="therapy" label="Therapy photo · 4:5" className="w-full aspect-[4/5]" /></div>
-            </div>
-            <div className="rv mt-16 card !rounded-[2rem] grid md:grid-cols-2 hover:!translate-y-0">
-              <Img k="pool" label="Hydrotherapy photo · 3:2" className="w-full h-full min-h-[260px] !border-0 !rounded-none" />
-              <div className="p-8 md:p-12 flex flex-col justify-center">
-                <p className="text-xs font-bold tracking-[.22em] uppercase t-teal">Aquatic therapy</p>
-                <h3 className="text-3xl font-bold mt-2">Hydrotherapy for neurological recovery</h3>
-                <p className="text-[15px] text-slate-600 mt-4 leading-relaxed">A therapist works one-to-one with the patient in the pool, using the water's buoyancy to support weak limbs and its resistance to build strength, balance and walking confidence — with far less strain on joints and a lower fear of falling.</p>
-                <ul className="mt-5 grid gap-2 text-sm text-slate-600">{["Safer early standing and gait practice", "Eases stiffness and spasticity", "Builds balance, trunk control and endurance"].map((x) => <li key={x} className="flex gap-3 items-center"><span className="t-teal"><Ico n="chk" c="w-4 h-4" /></span>{x}</li>)}</ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ADVANCED TECHNOLOGIES */}
-        <section id="tech" className="bg-sky relative overflow-hidden px-5 md:px-10 py-20 md:py-24">
-          <div className="max-w-6xl mx-auto relative">
-            <div className="rv"><H2 a="Advanced" b="Technologies" /><p className="mt-4 text-[15px] text-slate-600 max-w-3xl">Alongside hands-on therapy, our team uses specialised technology to support movement and strength training.</p></div>
-            <div className="grid md:grid-cols-2 gap-8 mt-12">
-              {TECH.map(([t, k, d], i) => (
-                <div key={t} className="rv card" style={{ "--d": `${i * .12}s` }}>
-                  <Img k={k} label={t} className="w-full aspect-[16/10] !border-0 !rounded-none" />
-                  <div className="p-7"><h3 className="font-bold text-xl">{t}</h3><p className="text-[15px] text-slate-600 mt-3 leading-relaxed">{d}</p></div>
+              {/* sticky tabs */}
+              <div className="sticky top-0 z-40 px-3 py-3 pointer-events-none">
+                <div className="noscroll pointer-events-auto max-w-fit mx-auto bg-white/95 backdrop-blur rounded-full shadow-xl p-1.5 flex overflow-x-auto max-w-full border border-slate-100">
+                  {TABS.map(([l, h]) => <a key={h} href={`#${h}`} className={`tab ${act === h ? "on" : ""}`}>{l}</a>)}
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* LEADERSHIP */}
-        <section id="team" className="px-5 md:px-10 py-20 md:py-24">
-          <div className="max-w-6xl mx-auto">
-            <div className="rv"><H2 a="Department" b="Leadership" /></div>
-            <div className="rv grid md:grid-cols-[auto_1fr] gap-8 md:gap-14 items-center mt-12">
-              <div className="relative w-56 h-56 md:w-64 md:h-64">
-                <span className="absolute -right-3 -bottom-3 w-full h-full rounded-full border-[10px] border-[#e4266f]/70" />
-                <Img k="doctor" label="Doctor portrait · square" className="relative w-full h-full !rounded-full" />
               </div>
-              <div>
-                <h3 className="text-3xl font-bold">{DOC[0]}</h3>
-                <p className="font-bold text-sm mt-2">{DOC[1]}</p>
-                <p className="text-[15px] text-slate-600 mt-4 leading-relaxed max-w-2xl">{DOC[2]}</p>
-                <a href={ask("I'd like to know more about Dr. Prem Prakash.")} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-bold t-teal mt-5"><span className="w-6 h-6 rounded-full bg-[#2bb5a0] text-white grid place-items-center"><Ico n="arr" c="w-3 h-3" /></span>Read More</a>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* REQUEST A CONSULTATION */}
-        <section id="contact" className="dk relative overflow-hidden" style={{ background: "linear-gradient(110deg,#241f6b,#17134a)" }}>
-          <i aria-hidden className="absolute -right-24 -top-24 w-96 h-96 rounded-full border-[44px] border-white/10" />
-          <div className="max-w-6xl mx-auto grid md:grid-cols-[.8fr_1fr] gap-10 items-center px-5 md:px-10 py-16 md:py-0 relative">
-            <div className="rv md:py-14"><Img k="cta" label="Team / patient photo · 4:5" className="w-full aspect-[4/5] md:aspect-auto md:h-[460px] !rounded-3xl" /></div>
-            <div className="rv text-white md:py-14" style={{ "--d": ".1s" }}>
-              <h2 className="text-4xl md:text-5xl !text-white"><b className="font-bold">Request a</b> <span className="t-mint font-light">consultation</span></h2>
-              <p className="mt-5 text-[15px] text-white/75 leading-relaxed">MaxRehab Advanced Neurorehabilitation Center provides personalised neuro-rehabilitation for patients from Dehri on Sone, Sasaram, Aurangabad, and across Rohtas and Bihar. We welcome every case, from the common to the most challenging, and our team works together to design a plan for your recovery.</p>
-              <p className="mt-4 text-[15px] font-bold">Send an enquiry and a MaxRehab coordinator will contact you shortly:</p>
-              <div className="flex flex-wrap gap-3 mt-6">
-                <Btn href={ask("I am a new patient and would like a consultation.")}>New Patient <Ico n="arr" c="w-4 h-4" /></Btn>
-                <Btn href={ask("I am a current patient and have a query.")} v="t">Current & Returning Patients <Ico n="arr" c="w-4 h-4" /></Btn>
-                <Btn href={ask("I would like to refer a patient.")} v="w">Refer a Patient <Ico n="arr" c="w-4 h-4" /></Btn>
-              </div>
-              <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3 mt-10 text-sm text-white/80">
-                <span><b className="t-mint block text-[11px] uppercase tracking-widest">Call</b>{C.phone}</span>
-                <span><b className="t-mint block text-[11px] uppercase tracking-widest">Email</b>{C.email}</span>
-                <span><b className="t-mint block text-[11px] uppercase tracking-widest">Hours</b>{C.hours}</span>
-                <span><b className="t-mint block text-[11px] uppercase tracking-widest">Visit</b>{C.addr} · <a href={C.map} target="_blank" rel="noreferrer" className="underline">Directions</a></span>
-              </div>
-            </div>
-          </div>
-        </section>
+              {/* ABOUT */}
+              <section id="about" className="bg-sky relative overflow-hidden px-5 md:px-10 py-20 md:py-24">
+                <Ring c="-right-40 bottom-0 hidden md:block" />
+                <div className="max-w-6xl mx-auto relative">
+                  <div className="rv"><H2 a="Personalized Neurological" b="Rehabilitation" /></div>
+                  <div className="rv mt-8 grid gap-5 max-w-4xl text-[15px] leading-relaxed text-slate-600">
+                    <p>A neurological injury or illness can change how a person moves, communicates and manages daily life. Rehabilitation addresses these changes through a programme tailored to the individual's condition, abilities and priorities.</p>
+                    <p>The rehabilitation team develops goals together with patients and their families, combining therapies according to each person's needs. Care may include physical rehabilitation, pain management, emotional support and help preparing for a return to home or work. After discharge, we continue with home programmes and follow-up.</p>
+                    <p>A case manager helps coordinate communication between the patient, family and professionals involved in treatment.</p>
+                    <p className="italic text-slate-500">For patients travelling from other districts or states, medical records can be reviewed by our team before arrival to assess the condition and the suitability of the available programmes. The rehabilitation plan is then set after an individual assessment.</p>
+                  </div>
+                </div>
+              </section>
 
-        {/* footer */}
-        <footer className="bg-[#0f0c33] text-white/70 px-5 md:px-10 pt-16 pb-10 text-sm border-t border-white/5">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
-            {/* Col 1: Logo & About */}
-            <div className="md:col-span-5 space-y-4">
-              <a href="#top" className="inline-block bg-white px-5 py-2.5 rounded-2xl shadow-lg transition-transform hover:scale-[1.02]">
-                <img
-                  src={IMG.logo}
-                  alt="MaxRehab Advanced Neurorehabilitation Center"
-                  className="h-16 md:h-20 w-auto object-contain"
-                />
-              </a>
-              <h3 className="text-white font-bold text-lg pt-1">MaxRehab Advanced Neurorehabilitation Center</h3>
-              <p className="text-xs md:text-sm text-white/60 leading-relaxed max-w-md">
-                Pioneering comprehensive neurological recovery in Dehri on Sone. Specialized care for stroke rehabilitation, spinal cord injuries, brain injury, Parkinson's disease, and pediatric neuro-rehabilitation.
-              </p>
-            </div>
+              {/* CONDITIONS */}
+              <section id="conditions" className="px-5 md:px-10 py-20 md:py-24">
+                <div className="max-w-6xl mx-auto">
+                  <div className="rv"><H2 a="Conditions" b="We Treat" /><p className="mt-4 text-[15px] text-slate-600">The centre provides rehabilitation for people with a wide range of neurological injuries and conditions, including:</p></div>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+                    {CONDS.map(([t, l], i) => (
+                      <div key={t} className="rv card p-7" style={{ "--d": `${(i % 3) * .1}s` }}>
+                        <h3 className="font-bold text-[15px]">{t}</h3>
+                        <ul className="mt-3 grid gap-1.5 text-sm text-slate-500">{l.map((x) => <li key={x}>{x}</li>)}</ul>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="rv mt-10 text-[15px] text-slate-600 max-w-4xl">The rehabilitation plan depends on how the condition affects the individual's function and daily life. Patients may need support after a recent injury or illness, or help managing the ongoing effects of a neurological condition.</p>
+                </div>
+              </section>
 
-            {/* Col 2: Navigation Links */}
-            <div className="md:col-span-3 space-y-3">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#8ff0dc]">Quick Links</h4>
-              <ul className="space-y-2 text-xs md:text-sm text-white/70">
-                {NAV.map(([l, h]) => (
-                  <li key={h}>
-                    <a href={`#${h}`} className="hover:text-[#2bb5a0] transition-colors">{l}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+              {/* SPINAL CORD INJURY */}
+              <section id="sci" className="bg-sky relative overflow-hidden px-5 md:px-10 py-20 md:py-24">
+                <div className="dots absolute right-0 top-0 w-1/2 h-72 opacity-70 hidden md:block" />
+                <div className="max-w-6xl mx-auto relative">
+                  <div className="rv"><H2 a="Spinal Cord" b="Injury" /><h3 className="font-bold text-2xl mt-10">Spinal Cord Injury Rehabilitation</h3></div>
+                  <div className="rv mt-5 grid gap-4 max-w-4xl text-[15px] leading-relaxed text-slate-600">
+                    <p>Our spinal cord injury programme is a focused service within MaxRehab Advanced Neurorehabilitation Center, delivered by a multidisciplinary team. It supports people with injuries to the spinal cord from accident, disease or surgery.</p>
+                    <p>Treatment is shaped around the patient's remaining abilities and goals, with an emphasis on improving function and supporting daily activity.</p>
+                  </div>
+                  <div className="grid sm:grid-cols-2 gap-6 mt-10 max-w-4xl">
+                    {SCI.map(([t, d], i) => (
+                      <div key={t} className="rv" style={{ "--d": `${(i % 2) * .1}s` }}>
+                        <h3 className="font-extrabold uppercase text-[15px] tracking-wide">{t}</h3>
+                        <p className="text-[15px] text-slate-600 mt-2 leading-relaxed">{d}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="rv mt-8 text-sm text-slate-500 max-w-4xl">Eligibility for any technique is decided after an individual clinical assessment; outcomes vary by patient.</p>
+                </div>
+              </section>
 
-            {/* Col 3: Contact & Location */}
-            <div className="md:col-span-4 space-y-3">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#8ff0dc]">Contact & Clinic</h4>
-              <div className="space-y-2 text-xs md:text-sm text-white/70">
-                <p className="flex items-start gap-2">
-                  <span className="font-bold text-white min-w-[55px]">Address:</span>
-                  <span>{C.addr}</span>
-                </p>
-                <p className="flex items-center gap-2">
-                  <span className="font-bold text-white min-w-[55px]">Phone:</span>
-                  <a href={`tel:${C.phone.replace(/\s/g, "")}`} className="hover:text-[#8ff0dc] transition">{C.phone}</a>
-                </p>
-                <p className="flex items-center gap-2">
-                  <span className="font-bold text-white min-w-[55px]">Email:</span>
-                  <a href={`mailto:${C.email}`} className="hover:text-[#8ff0dc] transition">{C.email}</a>
-                </p>
-                <p className="flex items-center gap-2">
-                  <span className="font-bold text-white min-w-[55px]">Hours:</span>
-                  <span>{C.hours}</span>
-                </p>
-              </div>
-            </div>
-          </div>
+              {/* THERAPIES & SUPPORT */}
+              <section id="therapies" className="relative overflow-hidden px-5 md:px-10 py-20 md:py-24">
+                <Ring c="-right-44 top-1/3 hidden lg:block" />
+                <div className="max-w-6xl mx-auto relative">
+                  <div className="rv"><H2 a="Rehabilitation Therapies" b="and Support" /><p className="mt-4 text-[15px] text-slate-600 max-w-3xl">Patients receive a combination of therapies selected for their needs. These services address movement, daily activities, communication, cognitive difficulties and emotional adjustment.</p></div>
+                  <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 mt-12 items-start">
+                    <div className="grid gap-9">
+                      {THER.map(([t, d]) => <div key={t} className="rv"><h3 className="font-bold text-2xl">{t}</h3><p className="text-[15px] text-slate-600 mt-2 leading-relaxed">{d}</p></div>)}
+                    </div>
+                    <div className="rv frame lg:sticky lg:top-24"><Img k="therapy" label="Therapy photo · 4:5" className="w-full aspect-[4/5]" /></div>
+                  </div>
+                  <div className="rv mt-16 card !rounded-[2rem] grid md:grid-cols-2 hover:!translate-y-0">
+                    <Img k="pool" label="Hydrotherapy photo · 3:2" className="w-full h-full min-h-[260px] !border-0 !rounded-none" />
+                    <div className="p-8 md:p-12 flex flex-col justify-center">
+                      <p className="text-xs font-bold tracking-[.22em] uppercase t-teal">Aquatic therapy</p>
+                      <h3 className="text-3xl font-bold mt-2">Hydrotherapy for neurological recovery</h3>
+                      <p className="text-[15px] text-slate-600 mt-4 leading-relaxed">A therapist works one-to-one with the patient in the pool, using the water's buoyancy to support weak limbs and its resistance to build strength, balance and walking confidence — with far less strain on joints and a lower fear of falling.</p>
+                      <ul className="mt-5 grid gap-2 text-sm text-slate-600">{["Safer early standing and gait practice", "Eases stiffness and spasticity", "Builds balance, trunk control and endurance"].map((x) => <li key={x} className="flex gap-3 items-center"><span className="t-teal"><Ico n="chk" c="w-4 h-4" /></span>{x}</li>)}</ul>
+                    </div>
+                  </div>
+                </div>
+              </section>
 
-          <div className="max-w-6xl mx-auto pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/50">
-            <span>© {new Date().getFullYear()} {C.name}. All rights reserved.</span>
-            <span className="text-center md:text-right max-w-xl">
-              Emergency Notice: In case of acute medical emergencies such as stroke onset, please visit the nearest hospital or call 108 immediately. Website information does not replace medical advice.
-            </span>
-          </div>
-        </footer>
+              {/* ADVANCED TECHNOLOGIES */}
+              <section id="tech" className="bg-sky relative overflow-hidden px-5 md:px-10 py-20 md:py-24">
+                <div className="max-w-6xl mx-auto relative">
+                  <div className="rv"><H2 a="Advanced" b="Technologies" /><p className="mt-4 text-[15px] text-slate-600 max-w-3xl">Alongside hands-on therapy, our team uses specialised technology to support movement and strength training.</p></div>
+                  <div className="grid md:grid-cols-2 gap-8 mt-12">
+                    {TECH.map(([t, k, d], i) => (
+                      <div key={t} className="rv card" style={{ "--d": `${i * .12}s` }}>
+                        <Img k={k} label={t} className="w-full aspect-[16/10] !border-0 !rounded-none" />
+                        <div className="p-7"><h3 className="font-bold text-xl">{t}</h3><p className="text-[15px] text-slate-600 mt-3 leading-relaxed">{d}</p></div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </section>
 
-        <a href={waLink("Hello MaxRehab, I need help.")} target="_blank" rel="noreferrer" aria-label="WhatsApp" className="fixed bottom-5 right-5 z-50 btn btn-t pu !py-3.5 shadow-2xl"><Ico n="ph" />Chat</a>
-      </main>
-    </>
-  );
+              {/* LEADERSHIP */}
+              <section id="team" className="px-5 md:px-10 py-20 md:py-24">
+                <div className="max-w-6xl mx-auto">
+                  <div className="rv"><H2 a="Department" b="Leadership" /></div>
+                  <div className="rv grid md:grid-cols-[auto_1fr] gap-8 md:gap-14 items-center mt-12">
+                    <div className="relative w-56 h-56 md:w-64 md:h-64">
+                      <span className="absolute -right-3 -bottom-3 w-full h-full rounded-full border-[10px] border-[#e4266f]/70" />
+                      <Img k="doctor" label="Doctor portrait · square" className="relative w-full h-full !rounded-full" />
+                    </div>
+                    <div>
+                      <h3 className="text-3xl font-bold">{DOC[0]}</h3>
+                      <p className="font-bold text-sm mt-2">{DOC[1]}</p>
+                      <p className="text-[15px] text-slate-600 mt-4 leading-relaxed max-w-2xl">{DOC[2]}</p>
+                      <a href={ask("I'd like to know more about Dr. Prem Prakash.")} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-bold t-teal mt-5"><span className="w-6 h-6 rounded-full bg-[#2bb5a0] text-white grid place-items-center"><Ico n="arr" c="w-3 h-3" /></span>Read More</a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              {/* REQUEST A CONSULTATION */}
+              <section id="contact" className="dk relative overflow-hidden" style={{ background: "linear-gradient(110deg,#241f6b,#17134a)" }}>
+                <i aria-hidden className="absolute -right-24 -top-24 w-96 h-96 rounded-full border-[44px] border-white/10" />
+                <div className="max-w-6xl mx-auto grid md:grid-cols-[.8fr_1fr] gap-10 items-center px-5 md:px-10 py-16 md:py-0 relative">
+                  <div className="rv md:py-14"><Img k="cta" label="Team / patient photo · 4:5" className="w-full aspect-[4/5] md:aspect-auto md:h-[460px] !rounded-3xl" /></div>
+                  <div className="rv text-white md:py-14" style={{ "--d": ".1s" }}>
+                    <h2 className="text-4xl md:text-5xl !text-white"><b className="font-bold">Request a</b> <span className="t-mint font-light">consultation</span></h2>
+                    <p className="mt-5 text-[15px] text-white/75 leading-relaxed">MaxRehab Advanced Neurorehabilitation Center provides personalised neuro-rehabilitation for patients from Dehri on Sone, Sasaram, Aurangabad, and across Rohtas and Bihar. We welcome every case, from the common to the most challenging, and our team works together to design a plan for your recovery.</p>
+                    <p className="mt-4 text-[15px] font-bold">Send an enquiry and a MaxRehab coordinator will contact you shortly:</p>
+                    <div className="flex flex-wrap gap-3 mt-6">
+                      <Btn href={ask("I am a new patient and would like a consultation.")}>New Patient <Ico n="arr" c="w-4 h-4" /></Btn>
+                      <Btn href={ask("I am a current patient and have a query.")} v="t">Current & Returning Patients <Ico n="arr" c="w-4 h-4" /></Btn>
+                      <Btn href={ask("I would like to refer a patient.")} v="w">Refer a Patient <Ico n="arr" c="w-4 h-4" /></Btn>
+                    </div>
+                    <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3 mt-10 text-sm text-white/80">
+                      <span><b className="t-mint block text-[11px] uppercase tracking-widest">Call</b>{C.phone}</span>
+                      <span><b className="t-mint block text-[11px] uppercase tracking-widest">Email</b>{C.email}</span>
+                      <span><b className="t-mint block text-[11px] uppercase tracking-widest">Hours</b>{C.hours}</span>
+                      <span><b className="t-mint block text-[11px] uppercase tracking-widest">Visit</b>{C.addr} · <a href={C.map} target="_blank" rel="noreferrer" className="underline">Directions</a></span>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              {/* footer */}
+              <footer className="bg-[#0f0c33] text-white/70 px-5 md:px-10 pt-16 pb-10 text-sm border-t border-white/5">
+                <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+                  {/* Col 1: Logo & About */}
+                  <div className="md:col-span-5 space-y-4">
+                      <a href="#top" className="inline-block bg-white px-5 py-2.5 rounded-2xl shadow-lg transition-transform hover:scale-[1.02]">
+                        <img
+                          src={IMG.logo}
+                          alt="MaxRehab Advanced Neurorehabilitation Center"
+                          className="h-16 md:h-20 w-auto object-contain"
+                        />
+                      </a>
+                      <h3 className="text-white font-bold text-lg pt-1">MaxRehab Advanced Neurorehabilitation Center</h3>
+                      <p className="text-xs md:text-sm text-white/60 leading-relaxed max-w-md">
+                        Pioneering comprehensive neurological recovery in Dehri on Sone. Specialized care for stroke rehabilitation, spinal cord injuries, brain injury, Parkinson's disease, and pediatric neuro-rehabilitation.
+                      </p>
+                  </div>
+
+                  {/* Col 2: Navigation Links */}
+                  <div className="md:col-span-3 space-y-3">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#8ff0dc]">Quick Links</h4>
+                    <ul className="space-y-2 text-xs md:text-sm text-white/70">
+                      {NAV.map(([l, h]) => (
+                        <li key={h}>
+                          <a href={`#${h}`} className="hover:text-[#2bb5a0] transition-colors">{l}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Col 3: Contact & Location */}
+                  <div className="md:col-span-4 space-y-3">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#8ff0dc]">Contact & Clinic</h4>
+                    <div className="space-y-2 text-xs md:text-sm text-white/70">
+                      <p className="flex items-start gap-2">
+                        <span className="font-bold text-white min-w-[55px]">Address:</span>
+                        <span>{C.addr}</span>
+                      </p>
+                      <p className="flex items-center gap-2">
+                        <span className="font-bold text-white min-w-[55px]">Phone:</span>
+                        <a href={`tel:${C.phone.replace(/\s/g, "")}`} className="hover:text-[#8ff0dc] transition">{C.phone}</a>
+                      </p>
+                      <p className="flex items-center gap-2">
+                        <span className="font-bold text-white min-w-[55px]">Email:</span>
+                        <a href={`mailto:${C.email}`} className="hover:text-[#8ff0dc] transition">{C.email}</a>
+                      </p>
+                      <p className="flex items-center gap-2">
+                        <span className="font-bold text-white min-w-[55px]">Hours:</span>
+                        <span>{C.hours}</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="max-w-6xl mx-auto pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/50">
+                  <span>© {new Date().getFullYear()} {C.name}. All rights reserved.</span>
+                  <span className="text-center md:text-right max-w-xl">
+                    Emergency Notice: In case of acute medical emergencies such as stroke onset, please visit the nearest hospital or call 108 immediately. Website information does not replace medical advice.
+                  </span>
+                </div>
+              </footer>
+
+              <a href={waLink("Hello MaxRehab, I need help.")} target="_blank" rel="noreferrer" aria-label="WhatsApp" className="fixed bottom-5 right-5 z-50 btn btn-t pu !py-3.5 shadow-2xl"><Ico n="ph" />Chat</a>
+            </main>
+          </>
+          );
 }
